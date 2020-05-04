@@ -1,0 +1,17 @@
+The idea of the projetct is to have Node-Red waiting for data from the esp8266
+
+https://www.hackster.io/chris-topher-slater/brew-home-hydrometer-622973
+>>>>>>> requires node.js Dashboard
+
+---- Install Node-RED on Synology NAS or on RPI -------
+Install Node.js using the package center
+Make sure user home service is enabled under user > advanced > user home (I didn't originally and node-red failed to start because it couldn't access the home dir!)
+SSH into it and install node-red using command from official documentation (sudo npm install -g --unsafe-perm node-red)
+Type 'node-red' and it should be running at [nas-ip-address]:1880 !
+
+------ Compiling and uploading ------
+Compiling:
+
+
+Upload:
+/Users/vjaunet/Library/Arduino15/packages/esp8266/tools/esptool/2.5.0-3-20ed2b9/esptool -vv -cd ck -cb 115200 -cp /dev/cu.wchusbserial1410 -ca 0x00000 -cf /var/folders/_7/tplbt6l171z7xn25qhcdzqxw0000gn/T/arduino_build_446891/esp8266_spindle_sk.ino.bin
